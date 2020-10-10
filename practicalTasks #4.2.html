@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="element">Element 1</div>
+    <div class="element">Element 2</div>
+    <div class="element">Element 3</div>
+    <div class="element">Element 4</div>
+    <div class="element">Element 5</div>
+    <div class="element">Element 6</div>
+
+    <button onclick="myFunction()">Нажмите!</button>
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementsByTagName("div");
+            for(let l=0; l<x.length; l++) {
+                if (l < 3) {
+                    x[l].style.color = "red";
+                }
+                else x[l].style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

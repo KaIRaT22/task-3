@@ -1,0 +1,59 @@
+<!DOCTYPE html>    
+<html>    
+   <head>    
+      <title>    
+         HTML CANVAS    
+      </title>    
+   </head>      
+    <body onload="bodyLoad()">    
+        <canvas id="mycanvas" width="400" height="200"></canvas>    
+    </body>
+   <script>
+   function myFace() {    
+       var c = document.getElementById("mycanvas");
+       var draw = c.getContext("2d");    
+        
+       draw.beginPath();
+       draw.fillStyle = "yellow";
+       draw.arc(75, 75, 50, 0, Math.PI * 2, true);
+       draw.closePath();    
+       draw.fill();    
+    }
+
+    function myEye() {    
+        var c = document.getElementById("mycanvas");    
+        var eye = c.getContext("2d");    
+        
+        // left eye
+        eye.beginPath();    
+        eye.fillStyle = "black";
+        eye.arc(50, 60, 5, 0, Math.PI * 2, true);    
+        eye.closePath();    
+        eye.fill();    
+            
+        // right eye
+        eye.beginPath();    
+        eye.fillStyle = "black";    
+        eye.arc(100, 60, 5, 0, Math.PI * 2, true);    
+        eye.closePath();    
+        eye.fill();
+            
+    }
+
+    function mySmile() {    
+        var c = document.getElementById("mycanvas");    
+        var smile = c.getContext("2d");
+
+        smile.beginPath();    
+        smile.strokeStyle = "red";    
+        smile.arc(75, 85, 20, 0, Math.PI, false);    
+        smile.stroke();    
+    } 
+
+    function bodyLoad() {    
+        myFace();    
+        myEye();
+        mySmile()    
+    }
+   </script>
+</html> 

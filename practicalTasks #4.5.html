@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cart-items">
+        <div class="item">Milk 1 l.<span class="qty">x 2</span></div>
+        <div class="item">Cola 1.5 l. <span class="qty">x 1</span></div>
+        <div class="item">Bread<span class="qty">x 2</span></div>
+        <div class="item">Cheese<span class="qty">x 1</span></div>
+        <div class="item">Chocolate bar<span class="qty">x 3</span></div>
+    </div>
+    
+        
+    <button onclick="myFunction()">Нажмите!</button>
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementsByClassName("item");
+
+            var textnode1 = document.createTextNode("Canned Fish");
+            var textnode2 = document.createTextNode("x 4");
+            var elmnt = document.createElement("div");
+            var spn = document.createElement("span");
+            spn.appendChild(textnode2);
+            elmnt.appendChild(textnode1);
+            elmnt.appendChild(spn);
+
+            for(let i=0; i<x.length; i++) {
+                if(x[i].innerHTML.indexOf("Cola 1.5 l.") === 0) {
+                    x[i].remove();
+                }
+                if(x[i].innerHTML.indexOf("Chocolate bar") === 0) {
+                    var cardItems = document.getElementById("cart-items");
+                    cardItems.replaceChild(elmnt, x[i]);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

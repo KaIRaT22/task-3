@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">Start</button>
+
+    <script>
+        function myFunction() {
+            var ul = document.createElement("ul");
+            var person = prompt("Напишите задание на сегодня", "Coding");
+
+            while (person != "") {
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(person));
+                ul.appendChild(li);
+                person = prompt("Напишите задание на сегодня", "Coding");
+            }
+            var body = document.getElementsByTagName("body");
+            body[0].appendChild(ul);
+        }
+    </script>
+</body>
+</html>

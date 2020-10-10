@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="todo-list"></ol>
+    <button onclick="myFunction()">Нажмите!</button>
+
+    <script>
+        var tasks = ['Buy lemonade', 'Make toasts', 'Repair car', 'Play games', 'Pet a cat'];
+
+        var ul = document.getElementById("todo-list");
+        
+        function myFunction() {
+            for(let l=0; l<tasks.length; l++) {
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(tasks[l]));
+                li.setAttribute("class", "task");
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
